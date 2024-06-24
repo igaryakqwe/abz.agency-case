@@ -6,6 +6,7 @@ import Input from "./components/ui/input/Input.tsx";
 import Card from "./components/card/Card.tsx";
 import Header from "./components/header/Header.tsx";
 import Loader from "./components/ui/loader/Loader.tsx";
+import Tooltip from "./components/ui/tooltip/Tooltip.tsx";
 
 function App() {
   const [file, setFile] = useState<File | null>(null);
@@ -33,6 +34,7 @@ function App() {
       <Input label={'12313'} error={'dasdads'} />
       <Card user={user} />
       <Loader />
+      <Tooltip text={'dsahjjdhsajhdkhasdhsagjdgasgdhsada'} />
     </div>
   )
 }
