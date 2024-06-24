@@ -1,0 +1,79 @@
+@use '../../../styles/palette' as *;
+@import '../../../styles/typography';
+
+.input-container {
+  position: relative;
+}
+
+.input-container.error .input {
+  border-color: $error;
+}
+
+.input-container:focus-within .label .text,
+.input-container :not(:placeholder-shown) + .label .text {
+  font-size: 12px;
+  transform: translate(0, -160%);
+  background-color: white;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.input {
+  @extend p;
+  height: 54px;
+  max-width: 328px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.input-default {
+  @extend .input;
+  border: 1px solid $light-gray-border;
+}
+
+.input-error {
+  @extend .input;
+  border: 2px solid $error;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.label-default {
+  @extend .label;
+  color: $dark-gray;
+}
+
+.label-error {
+  @extend .label;
+  color: $error;
+}
+
+.label .text {
+  transition: all 0.15s ease-out;
+}
+
+input:focus {
+  outline: none;
+}
+
+.error {
+  @extend p;
+  color: $error;
+  margin-left: 16px;
+}
