@@ -7,6 +7,7 @@ import Card from "./components/card/Card.tsx";
 import Header from "./components/header/Header.tsx";
 import Loader from "./components/ui/loader/Loader.tsx";
 import Tooltip from "./components/ui/tooltip/Tooltip.tsx";
+import Radio from "./components/ui/radio/Radio.tsx";
 
 function App() {
   const [file, setFile] = useState<File | null>(null);
@@ -35,6 +36,10 @@ function App() {
       <Card user={user} />
       <Loader />
       <Tooltip text={'dsahjjdhsajhdkhasdhsagjdgasgdhsada'} />
+      <div>
+        <Radio id="radio1" name="group1" label="Option 1"/>
+        <Radio id="radio2" name="group1" label="Option 2"/>
+      </div>
     </div>
   )
 }

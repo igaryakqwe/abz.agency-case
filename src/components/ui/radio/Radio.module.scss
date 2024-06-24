@@ -1,0 +1,45 @@
+@use '../../../styles/palette' as *;
+@import '../../../styles/typography';
+
+.radio {
+  position: absolute;
+  left: -9999px;
+}
+
+.radio + .label {
+  @extend .p;
+  position: relative;
+  padding-left: 36px;
+  cursor: pointer;
+  display: inline-block;
+  opacity: 0.87;
+}
+
+.radio + .label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $light-gray-border;
+  border-radius: 100%;
+  background: #fff;
+}
+
+.radio + .label:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: $blue;
+  position: absolute;
+  border: 2px solid $blue;
+  top: 5.5px;
+  left: 5px;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.radio:checked + .label:after {
+  opacity: 1;
+}
