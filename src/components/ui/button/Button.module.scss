@@ -2,7 +2,7 @@
 @import '../../../styles/typography';
 
 .button {
-  @extend p;
+  @extend .p;
   border-radius: 80px;
   background-color: $yellow;
   padding: 4px 23px;

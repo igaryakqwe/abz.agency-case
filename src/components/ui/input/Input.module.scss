@@ -19,7 +19,7 @@
 }
 
 .input {
-  @extend p;
+  @extend .p;
   height: 54px;
   max-width: 328px;
   border-radius: 4px;
@@ -73,7 +73,7 @@ input:focus {
 }
 
 .error {
-  @extend p;
+  @extend .p;
   color: $error;
   margin-left: 16px;
 }

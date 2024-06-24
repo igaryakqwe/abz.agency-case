@@ -4,7 +4,7 @@
 .wrapper {
   cursor: pointer;
   max-width: 328px;
-  padding: 11px 0;
+  padding: 14px 0;
   border-radius: 4px;
   display: block;
 }
@@ -20,7 +20,7 @@
 }
 
 .label {
-  @extend p;
+  @extend .p;
   height: 50px;
   padding: 14px 15px;
   border-radius: 4px 0 0 4px;
@@ -42,7 +42,7 @@
 }
 
 .text {
-  @extend p;
+  @extend .p;
   padding-left: 16px;
 }
 
