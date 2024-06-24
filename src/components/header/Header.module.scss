@@ -1,0 +1,24 @@
+.header {
+  padding: 0 60px 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.auth {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 32px 0 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header {
+    padding: 0 16px 0 16px;
+  }
+}

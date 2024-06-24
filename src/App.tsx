@@ -4,6 +4,7 @@ import Upload from "./components/ui/upload/Upload.tsx";
 import {useState} from "react";
 import Input from "./components/ui/input/Input.tsx";
 import Card from "./components/card/Card.tsx";
+import Header from "./components/header/Header.tsx";
 
 function App() {
   const [file, setFile] = useState<File | null>(null);
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div style={{ backgroundColor: '#f8f8f8'}}>
+      <Header />
       <Button>Normal</Button>
       <Button disabled>Disabled</Button>
       <Button>d</Button>
