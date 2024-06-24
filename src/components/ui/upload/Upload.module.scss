@@ -1,0 +1,63 @@
+@use '../../../styles/palette' as *;
+@import '../../../styles/typography';
+
+.wrapper {
+  cursor: pointer;
+  max-width: 328px;
+  padding: 11px 0;
+  border-radius: 4px;
+  display: block;
+}
+
+.wrapper-default {
+  @extend .wrapper;
+  border: 1px solid $light-gray;
+}
+
+.wrapper-error {
+  @extend .wrapper;
+  border: 2px solid $error;
+}
+
+.label {
+  @extend p;
+  height: 50px;
+  padding: 14px 15px;
+  border-radius: 4px 0 0 4px;
+}
+
+.label-default {
+  @extend .label;
+  border: 1px solid black;
+}
+
+.label-error {
+  height: 85px;
+  @extend .label;
+  border-right: 2px solid $error;
+}
+
+.input {
+  display: none;
+}
+
+.text {
+  @extend p;
+  padding-left: 16px;
+}
+
+.text-black {
+  @extend .text;
+  color: black;
+}
+
+.text-dark-gray {
+  @extend .text;
+  color: $dark-gray;
+}
+
+.error {
+  margin-top: 3px;
+  @extend .text;
+  color: $error;
+}
