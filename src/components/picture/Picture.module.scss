@@ -1,0 +1,44 @@
+@use '../../styles/palette' as *;
+@import '../../styles/typography';
+
+.picture {
+  max-width: 1170px;
+  height: 650px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url(../../assets/pexels-alexandr-podvalny-1227513.jpeg) lightgray -695px -842.321px / 218.803% 262.115% no-repeat;
+  background-size: cover;
+  background-position: left;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  max-width: 380px;
+  color: white;
+  text-align: center;
+
+  h1 {
+    @extend .heading;
+    margin-bottom: 21px;
+  }
+
+  p {
+    margin-bottom: 32px;
+    @extend .p;
+  }
+}
+
+@media (max-width: 768px) {
+  .picture {
+    height: 500px;
+    padding: 0 16px 0 16px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .picture {
+    align-items: flex-start;
+  }
+}
