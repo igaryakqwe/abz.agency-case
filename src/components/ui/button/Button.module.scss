@@ -1,0 +1,22 @@
+@use '../../../styles/palette' as *;
+@import '../../../styles/typography';
+
+.button {
+  @extend p;
+  border-radius: 80px;
+  background-color: $yellow;
+  padding: 4px 23px;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background-color: $yellow-hovered;
+  }
+
+  &:disabled {
+    background-color: $gray;
+    cursor: default;
+    color: white;
+    opacity: 0.87;
+  }
+}
