@@ -41,6 +41,24 @@
   margin: 0 auto;
 }
 
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin: 0 16px 100px 16px;
+
+  h1 {
+    @extend .heading;
+    text-align: center;
+  }
+
+  img {
+    max-width: 330px;
+    height: auto;
+  }
+}
+
 @media (max-width: 400px) {
   .form {
     width: 320px;

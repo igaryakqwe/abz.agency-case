@@ -10,6 +10,7 @@ import Upload from "../ui/upload/Upload.tsx";
 import {useEffect, useState} from "react";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { userSchema } from './validation';
+import SuccessBlock from "./component/SuccessBlock.tsx";
 
 interface IFormValues {
   name: string;
@@ -25,7 +26,7 @@ const Form = () => {
     register,
     handleSubmit,
     setValue,
-    formState: { errors }
+    formState: { errors, isValid }
   } = useForm<IFormValues>({
     resolver: zodResolver(userSchema),
     defaultValues: {
@@ -34,7 +35,8 @@ const Form = () => {
       phone: '',
       position_id: 1,
       file: null
-    }
+    },
+    mode: 'onChange',
   });
 
   useEffect(() => {
@@ -71,7 +73,7 @@ const Form = () => {
     formData.append('position_id', data.position_id.toString());
     formData.append('photo', data.file as Blob);
 
-    await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
+    const response = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -79,7 +81,11 @@ const Form = () => {
       },
       body: formData,
     });
-  }
+
+    if (response.ok) {
+      return <SuccessBlock />;
+    }
+  };
 
   return (
     <div id="sign-in" className={styles.wrapper}>
@@ -113,7 +119,7 @@ const Form = () => {
           ))}
         </div>
         <Upload file={file} setFile={handleFileChange} />
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit" disabled={!isValid || !file}>Sign Up</Button>
       </form>
     </div>
   );

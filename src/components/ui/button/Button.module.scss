@@ -4,10 +4,12 @@
 .button {
   @extend .p;
   border-radius: 80px;
+  color: black;
   background-color: $yellow;
   padding: 4px 20px;
   cursor: pointer;
   border: none;
+  opacity: 0.87;
 
   &:hover {
     background-color: $yellow-hovered;
