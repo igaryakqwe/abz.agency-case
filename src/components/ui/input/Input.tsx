@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { forwardRef } from 'react';
 import styles from './Input.module.scss';
 
 interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
@@ -6,33 +6,31 @@ interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   error?: string;
 }
 
-const Input: FC<InputProps> = ({ label, error, ...props }) => {
+const Input = forwardRef<HTMLInputElement, InputProps>(({ label, error, ...props }, ref) => {
   const inputStyles = error ? styles['input-error'] : styles['input-default'];
   const labelStyles = error ? styles['label-error'] : styles['label-default'];
 
   return (
-    <>
+    <div>
       <div className={styles['input-container']}>
         <input
-          id="input"
-          name="fname"
+          ref={ref}
           aria-labelledby="label-input"
           className={inputStyles}
           placeholder=""
           {...props}
         />
         {label && (
-          <label className={labelStyles} htmlFor="input" id="label-input">
+          <label className={labelStyles} id="label-input">
             <div className={styles.text}>{label}</div>
           </label>
         )}
-
       </div>
       {error && (
         <div className={styles.error}>{error}</div>
       )}
-    </>
+    </div>
   );
-}
+});
 
 export default Input;

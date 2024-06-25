@@ -13,7 +13,7 @@
 .input-container :not(:placeholder-shown) + .label .text {
   font-size: 12px;
   transform: translate(0, -160%);
-  background-color: white;
+  background-color: $light-gray;
   padding-left: 4px;
   padding-right: 4px;
 }
@@ -21,10 +21,11 @@
 .input {
   @extend .p;
   height: 54px;
-  max-width: 328px;
+  max-width: 380px;
   border-radius: 4px;
   box-sizing: border-box;
   padding: 16px;
+  background-color: $light-gray;
 }
 
 .input-default {
@@ -41,7 +42,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-box-shadow: 0 0 0 30px $light-gray inset !important;
 }
 
 .label {

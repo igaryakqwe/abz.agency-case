@@ -3,7 +3,6 @@
 
 .wrapper {
   cursor: pointer;
-  max-width: 328px;
   padding: 14px 0;
   border-radius: 4px;
   display: block;
@@ -11,7 +10,7 @@
 
 .wrapper-default {
   @extend .wrapper;
-  border: 1px solid $light-gray;
+  border: 1px solid $light-gray-border;
 }
 
 .wrapper-error {

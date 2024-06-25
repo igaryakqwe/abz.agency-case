@@ -40,7 +40,7 @@ const Upload: FC<UploadProps> = ({ file, setFile }) => {
   };
 
   return (
-    <>
+    <div style={{ width: '100%' }}>
       <label className={wrapperStyles}>
         <span className={labelStyles}>Upload</span>
         <span className={textStyles}>{fileName}</span>
@@ -53,7 +53,7 @@ const Upload: FC<UploadProps> = ({ file, setFile }) => {
         />
       </label>
       {error && <div className={styles.error}>{error}</div>}
-    </>
+    </div>
   );
 }
 
