@@ -71,7 +71,7 @@ const Form = () => {
     formData.append('position_id', data.position_id.toString());
     formData.append('photo', data.file as Blob);
 
-    const response = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
+    await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -79,12 +79,11 @@ const Form = () => {
       },
       body: formData,
     });
-
-    console.log(response);
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div id="sign-in" className={styles.wrapper}>
+      <h1 className={styles.header}>Working with POST request</h1>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <Input
           label="Your name"

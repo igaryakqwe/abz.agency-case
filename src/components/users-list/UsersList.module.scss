@@ -1,4 +1,8 @@
+@import '../../styles/typography';
+
 .header {
+  @extend .heading;
+  margin: 0 16px 50px 16px;
   display: grid;
   place-items: center;
   text-align: center;
@@ -13,6 +17,12 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 29px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 @media (max-width: 1170px) {

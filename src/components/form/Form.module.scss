@@ -1,9 +1,17 @@
+@import '../../styles/typography';
+
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 100px;
+}
+
+.header {
+  @extend .heading;
+  margin: 0 16px 50px 16px;
+  text-align: center;
 }
 
 .form {

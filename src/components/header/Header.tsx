@@ -8,8 +8,12 @@ const Header = () => {
       <div className={styles.content}>
         <img src={logo} alt="logo"/>
         <div className={styles.auth}>
-          <Button>Sign Up</Button>
-          <Button>Sign In</Button>
+          <a href="#sign-in">
+            <Button>Sign Up</Button>
+          </a>
+          <a href="#sign-in">
+            <Button>Sign In</Button>
+          </a>
         </div>
       </div>
     </header>
